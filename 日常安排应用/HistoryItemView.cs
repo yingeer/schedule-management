@@ -94,22 +94,22 @@ namespace 日常安排应用
                 // 事项在给定时间区段结束
                 int k = DateTime.Compare(itemEnd, this.startDateTime); // >=0
                 int l = DateTime.Compare(itemEnd, this.endDateTime); // <=0
-                if (k>=0 && l <=0) 
+                if (k>=0 && l <=0 && sdr["accomplish"].ToString() == "1" )
                 {
                    
                     addItemToListView(1, listView2, sdr);
                 }
 
                 // 事项尚未完成
-                if (l>0)
+                if ( j<=0  && sdr["accomplish"].ToString().Trim() == "0")
                 {
-                    if (DateTime.Compare(DateTime.Now, itemEnd) < 0) // 超时
+                    if (DateTime.Compare(DateTime.Now.Date, itemEnd) <= 0) 
                     {
                       
                         addItemToListView(2, listView3, sdr);
                     }
                     else
-                    {
+                    {// 超时
                         addItemToListView(3, listView3, sdr);
                     }
                 }

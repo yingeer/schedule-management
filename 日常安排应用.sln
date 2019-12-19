@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "日常安排应用", "日常安排应用\日常安排应用.csproj", "{79EB9DBD-9DB2-4191-97EE-080992576B45}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{DC19C77B-81D7-4B8D-A5C1-07BE91A08AC5}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{36015298-B16D-45A7-9146-2BDACBDDADB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{79EB9DBD-9DB2-4191-97EE-080992576B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79EB9DBD-9DB2-4191-97EE-080992576B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79EB9DBD-9DB2-4191-97EE-080992576B45}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC19C77B-81D7-4B8D-A5C1-07BE91A08AC5}.Debug|Any CPU.ActiveCfg = Debug
-		{DC19C77B-81D7-4B8D-A5C1-07BE91A08AC5}.Release|Any CPU.ActiveCfg = Release
+		{36015298-B16D-45A7-9146-2BDACBDDADB0}.Debug|Any CPU.ActiveCfg = Debug
+		{36015298-B16D-45A7-9146-2BDACBDDADB0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

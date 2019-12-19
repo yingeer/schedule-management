@@ -73,12 +73,13 @@ namespace 日常安排应用
             this.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void skinButton1_Click(object sender, EventArgs e)
         {
             string toFindUserName = this.textBox1.Text.Trim();
             SQLiteConnection conn = SqlHelper.CyCon();
             conn.Open();
-            string sql = "select * from tb_user where user_name='"+toFindUserName+"'";
+            string sql = "select * from tb_user where user_name='" + toFindUserName + "'";
             SQLiteCommand cmd = new SQLiteCommand(sql, conn);
             SQLiteDataReader sdr = null;
             try

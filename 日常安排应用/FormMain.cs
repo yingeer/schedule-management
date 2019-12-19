@@ -44,7 +44,7 @@ namespace 日常安排应用
 
             // listView2展示
             string sql2 = "select * from tb_schedule where accomplish = 0 and user_id=(select id from tb_user where user_name='"+this.userName+"')" ;
-            showTodayItem2(this.listView2, sql2, 3);
+            showTodayItem3(this.listView2, sql2, 3);
 
             // listView3展示
             string sql3 = "select * from tb_schedule where accomplish = 1 and user_id=(select id from tb_user where user_name='" + this.userName + "')";
@@ -65,7 +65,45 @@ namespace 日常安排应用
                 this.toolStripStatusLabel5.Text = "普通用户";
             }
         }
+        private void showTodayItem3(ListView listView, string sql, int imageIndex)
+        {
+            // 在listView2中展示数据
+            listView.Clear();
 
+            SQLiteConnection conn = SqlHelper.CyCon();
+            conn.Open();
+
+            SQLiteCommand cmd = new SQLiteCommand(sql, conn);
+            SQLiteDataReader sdr = cmd.ExecuteReader();
+            listView.BeginUpdate();   //数据更新，UI暂时挂起，直到EndUpdate绘制控件，可以有效避免闪烁并大大提高加载速度
+
+            while (sdr.Read())
+            {
+                // 日期比较
+                DateTime endTime = dateConverter(sdr["end_time"].ToString().Trim());
+                int compareRes = DateTime.Compare(this.Today, endTime);
+                DateTime startTime = dateConverter(sdr["start_time"].ToString().Trim());
+                if (DateTime.Compare(this.Today, startTime) >=0 )
+                {
+                    if (DateTime.Compare(endTime, DateTime.Now.Date) >= 0)
+                    {
+                        imageIndex = 3;
+                    }
+                    else
+                    {
+                        imageIndex = 0;
+                    }
+                    ListViewItem lvi = new ListViewItem();
+                    lvi.ImageIndex = imageIndex;
+                    lvi.Text = "事项" + sdr["id"].ToString() + "\n" + sdr["description"].ToString() + "...";
+                    listView.Items.Add(lvi);
+                }
+            }
+
+            sdr.Close(); conn.Close();
+            listView.EndUpdate();  //结束数据处理，UI界面一次
+
+        }
         private void showTodayItem2(ListView listView, string sql, int imageIndex)
         {
             // 在listView中展示数据

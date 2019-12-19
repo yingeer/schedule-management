@@ -24,28 +24,6 @@ namespace 日常安排应用
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            // 检查没有问题
-            if (checkInfo(this.textBoxUserName.Text.ToString().Trim(), this.textBoxPassWord.Text.ToString().Trim()))
-            {
-                // 勾选 记住密码
-                if (this.checkBox1.Checked)
-                {
-                    updateUserBindPassWd();
-                }
-                // 欢迎窗口
-                MessageBox.Show("欢迎" + this.textBoxUserName.Text.ToString().Trim());
-                // 跳转到FormMain
-                FormMain formMain = new FormMain();
-                formMain.power = power;
-                formMain.userName = this.textBoxUserName.Text.Trim();
-                this.Hide();
-                formMain.ShowDialog();
-                
-            }
-            else
-            {
-                MessageBox.Show("请检查登录信息");
-            }
         }
 
         private void updateUserBindPassWd()
@@ -134,22 +112,72 @@ namespace 日常安排应用
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // 数据查找
-                searchInfo(this.textBoxUserName.Text.ToString().Trim());
-                if (this.isRememberPassWd == 1)
+                if (this.textBoxPassWord.Text == "")
                 {
-                    this.textBoxPassWord.Text = this.passWord;
+                    // 数据查找
+                    searchInfo(this.textBoxUserName.Text.ToString().Trim());
+                    if (this.isRememberPassWd == 1)
+                    {
+                        this.textBoxPassWord.Text = this.passWord;
+                    }
+                } 
+                else
+                {
+                    skinButton1_Click(sender, e);
                 }
+                
             }
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            FormRegister form =  new FormRegister();
+           
+        }
+
+        private void skinButton1_Click(object sender, EventArgs e)
+        {
+            if (this.textBoxUserName.Text == "")
+            {
+                MessageBox.Show("请输入用户名");
+                return;
+            }
+            if (this.textBoxPassWord.Text == "")
+            {
+                MessageBox.Show("请输入密码");
+                return;
+            }
+            // 检查没有问题
+            if (checkInfo(this.textBoxUserName.Text.ToString().Trim(), this.textBoxPassWord.Text.ToString().Trim()))
+            {
+                // 勾选 记住密码
+                if (this.checkBox1.Checked)
+                {
+                    updateUserBindPassWd();
+                }
+                // 欢迎窗口
+                MessageBox.Show("欢迎" + this.textBoxUserName.Text.ToString().Trim());
+                // 跳转到FormMain
+                FormMain formMain = new FormMain();
+                formMain.power = power;
+                formMain.userName = this.textBoxUserName.Text.Trim();
+                this.Hide();
+                formMain.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("请检查登录信息");
+            }
+        }
+
+        private void skinButton2_Click(object sender, EventArgs e)
+        {
+            FormRegister form = new FormRegister();
             form.userName = this.textBoxUserName.Text.ToString().Trim();
             form.pForm = this;
             this.Hide();
             form.ShowDialog();
+            this.Show();
         }
     }
 }
