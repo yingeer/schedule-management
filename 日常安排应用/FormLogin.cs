@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+using CCWin;
 namespace 日常安排应用
 {
-    public partial class FormLogin : Form
+    public partial class FormLogin : Skin_DevExpress
     {
         public string userName = "";
         public int power = 2;

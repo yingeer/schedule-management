@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using CCWin;
 namespace 日常安排应用
 {
-    public partial class FormCalendar : Form
+    public partial class FormCalendar : Skin_DevExpress
     {
         public FormCalendar()
         {

@@ -8,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+using CCWin;
 namespace 日常安排应用
 {
-    public partial class FormManager : Form
+    public partial class FormManager : Skin_DevExpress
     {
         public string superUserName = "";
         public FormManager()

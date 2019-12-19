@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+using CCWin;
 
 namespace 日常安排应用
 {
-    public partial class FormRegister : Form
+    public partial class FormRegister : Skin_DevExpress
     {
         public string userName;
         public Form pForm;

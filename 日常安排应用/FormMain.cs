@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Globalization;
+using CCWin;
+
 
 namespace 日常安排应用
 {
-    public partial class FormMain : Form
+    public partial class FormMain : Skin_DevExpress
     {
         public string userName = "ying";
         public int power = 1;
@@ -383,6 +385,11 @@ namespace 日常安排应用
         private void button1_Click(object sender, EventArgs e)
         {
             FormMain_Load(sender, e);
+        }
+
+        private void skinTextBox1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

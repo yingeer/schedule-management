@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
 using System.Globalization;
+using CCWin;
 
 namespace 日常安排应用
 {
-    public partial class HistoryItemView : Form
+    public partial class HistoryItemView : Skin_DevExpress
     {
         public string startDate = "2019年12月18日";
         public string endDate = "2019年12月20日";

@@ -37,8 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataSet1 = new 日常安排应用.DataSet1();
             this.tbscheduleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new 日常安排应用.DataSet1();
             this.tb_scheduleTableAdapter = new 日常安排应用.DataSet1TableAdapters.tb_scheduleTableAdapter();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -49,8 +49,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbscheduleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,15 +115,15 @@
             this.comboBox1.TabIndex = 6;
             this.comboBox1.ValueMember = "category";
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tbscheduleBindingSource
             // 
             this.tbscheduleBindingSource.DataMember = "tb_schedule";
             this.tbscheduleBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tb_scheduleTableAdapter
             // 
@@ -192,7 +192,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(162, 21);
+            this.radioButton1.Location = new System.Drawing.Point(162, 37);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(159, 22);
             this.radioButton1.TabIndex = 14;
@@ -224,8 +224,8 @@
             this.Name = "FormAddItem";
             this.Text = "添加事项";
             this.Load += new System.EventHandler(this.FormAddItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbscheduleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
